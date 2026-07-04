@@ -9,6 +9,21 @@ Official landing page for **Cherry**, an open-source beta task flow todo app.
 - The main idea is to organize tasks as **flows, branches, and schedules**.
 - The project is moving toward a more polished open-source release.
 
+## GitHub Pages setup
+
+This site is a plain static website, so it should be published directly from the repository branch instead of a custom GitHub Actions workflow.
+
+Recommended Pages settings:
+
+```text
+Settings → Pages → Build and deployment
+Source: Deploy from a branch
+Branch: main
+Folder: / (root)
+```
+
+After saving, GitHub Pages should publish the files in the repository root.
+
 ## Files
 
 ```text
