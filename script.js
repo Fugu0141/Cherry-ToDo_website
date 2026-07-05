@@ -19,7 +19,7 @@ if ('IntersectionObserver' in window) {
         }
       });
     },
-    { threshold: 0.14 }
+    { threshold: 0.12 }
   );
 
   revealTargets.forEach((target) => observer.observe(target));
