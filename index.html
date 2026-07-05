@@ -3,286 +3,155 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Cherry — Simple flow-based todo</title>
-    <meta
-      name="description"
-      content="Cherryは、ルートタスクから線を伸ばして子タスクを作れる、シンプルで直感的なフロー型ToDoアプリです。現在はβ版です。"
-    />
-    <meta name="theme-color" content="#f6f7fb" />
-    <meta property="og:title" content="Cherry — Simple flow-based todo" />
-    <meta
-      property="og:description"
-      content="Create a root task, pull a line to add child tasks, and edit everything easily. Cherry is currently in beta."
-    />
+    <title>Cherry — Flow based Todo app</title>
+    <meta name="description" content="Cherryは、タスクをリストではなく流れで整理する、シンプルで直感的なフロー型ToDoアプリです。現在はβ版です。" />
+    <meta name="theme-color" content="#f7f9fc" />
+    <meta property="og:title" content="Cherry — Flow based Todo app" />
+    <meta property="og:description" content="Create a root task, pull a line, and grow your tasks as a flow. Cherry is currently in beta." />
     <meta property="og:type" content="website" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <header class="site-header" data-header>
-      <div class="container header-inner">
-        <a class="brand" href="#top" aria-label="Cherry home">
-          <span class="brand-icon">C</span>
-          <span>Cherry</span>
-        </a>
-        <nav class="nav-links" aria-label="Primary navigation">
-          <a href="#how">How it works</a>
-          <a href="#beta">Beta</a>
-        </nav>
-        <div class="header-actions">
-          <a class="button ghost small" href="https://github.com/Fugu0141/Cherry-ToDo">GitHub</a>
-          <a class="button primary small" href="https://fugu0141.github.io/Cherry-ToDo/">Try beta</a>
-        </div>
-      </div>
+      <a class="brand" href="#top" aria-label="Cherry home">
+        <span class="logo">C</span>
+        <span>Cherry</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#how">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#beta">Beta</a>
+      </nav>
+      <a class="header-button" href="https://fugu0141.github.io/Cherry-ToDo/">Try beta</a>
     </header>
 
     <main id="top">
-      <section class="hero">
-        <div class="container hero-grid">
-          <div class="hero-copy reveal">
-            <div class="eyebrow-row">
-              <span class="pill beta-pill">β version</span>
-              <span class="eyebrow-text">simple · visual · intuitive</span>
-            </div>
-            <h1>Simple task planning,<br />as a flow.</h1>
-            <p class="hero-lead">
-              Cherryは、ルートタスクを作って、線を引っ張って子タスクを増やしていくToDoアプリです。<br />
-              難しい操作を覚えなくても、流れのまま組み立てられます。
-            </p>
-            <ul class="hero-points">
-              <li>ルートタスクを作る</li>
-              <li>線を引っ張って子タスクを作る</li>
-              <li>作ったあとも簡単編集</li>
-            </ul>
-            <div class="hero-actions">
-              <a class="button primary" href="https://fugu0141.github.io/Cherry-ToDo/">Open beta</a>
-              <a class="button ghost" href="#how">See how it works</a>
-            </div>
+      <section class="hero section-wrap">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">β version · open-source</p>
+          <h1>タスクを、流れで組み立てる。</h1>
+          <p class="lead">
+            Cherryは、付箋のようなタスクを線でつなげて整理するToDoアプリです。リストだけでは見えにくい作業の順番、分岐、関係をそのまま画面で把握できます。
+          </p>
+          <div class="hero-points" aria-label="Cherry basic operation">
+            <span>ルートを作る</span>
+            <span>線を伸ばす</span>
+            <span>あとから直す</span>
           </div>
+          <div class="actions">
+            <a class="button primary" href="https://fugu0141.github.io/Cherry-ToDo/">Open beta</a>
+            <a class="button secondary" href="https://github.com/Fugu0141/Cherry-ToDo">View GitHub</a>
+          </div>
+        </div>
 
-          <div class="hero-preview reveal">
-            <div class="phone phone-large">
-              <div class="app-window">
-                <div class="app-head">
-                  <div class="app-title">
-                    <span class="app-icon">C</span>
-                    <div>
-                      <strong>Cherry-ToDo</strong>
-                      <p>タスクの流れを、付箋で育てる。</p>
-                    </div>
-                  </div>
-                  <div class="chip-row">
-                    <span class="chip">+ ルート</span>
-                    <span class="chip">自動整列</span>
-                    <span class="chip">戻る</span>
-                  </div>
-                </div>
-                <div class="board board-hero">
-                  <div class="day-tag">Jul<br /><strong>3</strong></div>
-                  <div class="lane lane-top"></div>
-                  <div class="lane lane-bottom"></div>
-                  <div class="task root-task task-a">
-                    <span class="bar"></span>
-                    <span class="label">数IIIテスト勉強</span>
-                  </div>
-                  <div class="task task-b">
-                    <span class="bar"></span>
-                    <span class="label">ワークP.12まで</span>
-                  </div>
-                  <div class="task task-c">
-                    <span class="label">白チャートP.40</span>
-                  </div>
-                  <div class="task task-d">
-                    <span class="label">白チャートP.45</span>
-                  </div>
-                  <div class="connector connector-main"></div>
-                  <div class="connector connector-branch"></div>
-                  <div class="mini-map">flow map</div>
-                </div>
-              </div>
-            </div>
+        <div class="hero-board reveal" aria-label="Cherry board preview">
+          <div class="browser-bar">
+            <div class="app-title"><span class="logo small">C</span><strong>Cherry</strong><small>タスクの流れを、ブロックで育てる。</small></div>
+            <div class="toolbar-pills"><span>+ ルート</span><span>自動整列</span><span>日付レーン ON</span></div>
           </div>
+          <svg class="board-shot" viewBox="0 0 1200 640" role="img" aria-label="A Cherry board with date lanes, sticky task blocks, and connector lines">
+            <defs>
+              <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#1b2740" flood-opacity="0.12" />
+              </filter>
+            </defs>
+            <rect width="1200" height="640" rx="18" fill="#f3f6fb" />
+            <rect x="70" y="0" width="190" height="640" fill="#e5f7fb" />
+            <g stroke="#c7d0dc" stroke-width="2">
+              <line x1="260" y1="0" x2="260" y2="640" />
+              <line x1="450" y1="0" x2="450" y2="640" />
+              <line x1="640" y1="0" x2="640" y2="640" />
+              <line x1="830" y1="0" x2="830" y2="640" />
+              <line x1="1020" y1="0" x2="1020" y2="640" />
+              <line x1="0" y1="190" x2="1200" y2="190" />
+              <line x1="0" y1="305" x2="1200" y2="305" />
+              <line x1="0" y1="420" x2="1200" y2="420" />
+            </g>
+            <line x1="72" y1="0" x2="72" y2="640" stroke="#5ec8d4" stroke-width="2" />
+            <g class="date-card">
+              <rect x="86" y="16" width="62" height="50" rx="8" fill="#ffffff" />
+              <text x="99" y="34">Jul</text><text x="100" y="57" class="date-big">5</text>
+              <rect x="278" y="16" width="62" height="50" rx="8" fill="#ffffff" />
+              <text x="289" y="57" class="date-big dark">6</text><text x="290" y="34">Jul</text>
+              <rect x="468" y="16" width="62" height="50" rx="8" fill="#ffffff" />
+              <text x="479" y="57" class="date-big dark">7</text><text x="480" y="34">Jul</text>
+              <rect x="658" y="16" width="62" height="50" rx="8" fill="#ffffff" />
+              <text x="669" y="57" class="date-big dark">8</text><text x="670" y="34">Jul</text>
+              <rect x="848" y="16" width="62" height="50" rx="8" fill="#ffffff" />
+              <text x="859" y="57" class="date-big dark">9</text><text x="860" y="34">Jul</text>
+            </g>
+            <g stroke="#9aa6b8" stroke-width="2" fill="none">
+              <path d="M220 135 H325 V220 H660" />
+              <path d="M325 135 H420 V305 H660" />
+              <path d="M785 275 H850" />
+              <path d="M785 360 H850" />
+              <path d="M785 445 H850 V530 H1015" />
+              <path d="M975 275 H1010" stroke-dasharray="6 8" />
+            </g>
+            <g filter="url(#cardShadow)" class="task-card-svg">
+              <rect x="90" y="95" width="135" height="62" fill="#fff3b8" stroke="#d6c985" /><rect x="90" y="95" width="7" height="62" fill="#76ccd0" /><text x="110" y="132">Launch Cherry v1.0</text>
+              <rect x="280" y="95" width="132" height="62" fill="#fff3b8" stroke="#d6c985" /><rect x="280" y="95" width="7" height="62" fill="#b9e0ce" /><text x="306" y="124">Review current</text><text x="326" y="142">progress</text>
+              <rect x="665" y="245" width="132" height="62" fill="#fff3b8" stroke="#d6c985" /><rect x="665" y="245" width="7" height="62" fill="#b9e0ce" /><text x="710" y="282">Design</text>
+              <rect x="855" y="245" width="132" height="62" fill="#fff3b8" stroke="#d6c985" /><rect x="855" y="245" width="7" height="62" fill="#b9e0ce" /><text x="900" y="282">UI colors</text>
+              <rect x="1045" y="245" width="132" height="62" fill="#fff3b8" stroke="#d6c985" /><rect x="1045" y="245" width="7" height="62" fill="#b9e0ce" /><text x="1090" y="282">App icon</text>
+              <rect x="665" y="330" width="132" height="62" fill="#fff3b8" stroke="#d6c985" /><rect x="665" y="330" width="7" height="62" fill="#b9e0ce" /><text x="698" y="367">Development</text>
+              <rect x="855" y="330" width="132" height="62" fill="#fff3b8" stroke="#d6c985" /><rect x="855" y="330" width="7" height="62" fill="#b9e0ce" /><text x="891" y="367">Mapping bugs</text>
+              <rect x="665" y="415" width="132" height="62" fill="#fff3b8" stroke="#d6c985" /><rect x="665" y="415" width="7" height="62" fill="#b9e0ce" /><text x="692" y="452">Documentation</text>
+              <rect x="855" y="415" width="132" height="62" fill="#fff3b8" stroke="#d6c985" /><rect x="855" y="415" width="7" height="62" fill="#b9e0ce" /><text x="902" y="452">README</text>
+              <rect x="855" y="500" width="132" height="62" fill="#fff3b8" stroke="#d6c985" /><rect x="855" y="500" width="7" height="62" fill="#b9e0ce" /><text x="886" y="537">Japanese docs</text>
+            </g>
+          </svg>
         </div>
       </section>
 
-      <section class="steps" id="how">
-        <div class="container">
-          <div class="section-head reveal">
-            <span class="section-kicker">How it works</span>
-            <h2>3 steps. That’s it.</h2>
-            <p>
-              Cherryの基本操作を、実際の使い方に寄せて3つに分けました。見たまま触れて、すぐ分かります。
-            </p>
-          </div>
-
-          <div class="step-grid">
-            <article class="step-card reveal">
-              <div class="step-meta">
-                <span class="step-number">01</span>
-                <h3>ルートタスクを作る</h3>
-                <p>まずは大元になるタスクをひとつ作ります。流れの出発点です。</p>
-              </div>
-              <div class="phone step-phone">
-                <div class="app-window">
-                  <div class="app-head compact">
-                    <div class="app-title small">
-                      <span class="app-icon">C</span>
-                      <div>
-                        <strong>Cherry-ToDo</strong>
-                        <p>最初にルートを置く</p>
-                      </div>
-                    </div>
-                    <div class="chip-row two">
-                      <span class="chip strong">+ ルート</span>
-                      <span class="chip">戻る</span>
-                    </div>
-                  </div>
-                  <div class="board board-step board-step-1">
-                    <div class="day-tag">Jul<br /><strong>3</strong></div>
-                    <div class="lane lane-top"></div>
-                    <div class="task root-task center-task">
-                      <span class="bar"></span>
-                      <span class="label">数IIIテスト勉強</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="step-card reveal">
-              <div class="step-meta">
-                <span class="step-number">02</span>
-                <h3>線を引っ張って子タスクを作る</h3>
-                <p>ルートからそのまま伸ばして、次にやることを子タスクとして追加できます。</p>
-              </div>
-              <div class="phone step-phone">
-                <div class="app-window">
-                  <div class="app-head compact">
-                    <div class="app-title small">
-                      <span class="app-icon">C</span>
-                      <div>
-                        <strong>Cherry-ToDo</strong>
-                        <p>線を伸ばして追加</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="board board-step board-step-2">
-                    <div class="lane lane-top"></div>
-                    <div class="lane lane-bottom"></div>
-                    <div class="task root-task root-left">
-                      <span class="bar"></span>
-                      <span class="label">数IIIテスト勉強</span>
-                    </div>
-                    <div class="task child-mid">
-                      <span class="bar"></span>
-                      <span class="label">ワークP.12まで</span>
-                    </div>
-                    <div class="task child-right">
-                      <span class="label">白チャートP.40</span>
-                    </div>
-                    <div class="connector drag-line"></div>
-                    <div class="connector child-line"></div>
-                    <span class="floating-plus">＋</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="step-card reveal">
-              <div class="step-meta">
-                <span class="step-number">03</span>
-                <h3>作ったあとも簡単編集</h3>
-                <p>タスク名や日付はあとからすぐ変更できます。気軽に直せるのもCherryの良さです。</p>
-              </div>
-              <div class="phone step-phone">
-                <div class="app-window">
-                  <div class="app-head compact">
-                    <div class="app-title small">
-                      <span class="app-icon">C</span>
-                      <div>
-                        <strong>Cherry-ToDo</strong>
-                        <p>あとから簡単編集</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="board board-step board-step-3">
-                    <div class="lane lane-top"></div>
-                    <div class="task edit-source">
-                      <span class="label">青チャートP.24</span>
-                    </div>
-                    <div class="edit-modal">
-                      <h4>タスクを編集</h4>
-                      <label>タスク名</label>
-                      <div class="field active">青チャートP.24</div>
-                      <label>目標日</label>
-                      <div class="field">2026/07/06</div>
-                      <div class="modal-actions">
-                        <span class="modal-btn muted">キャンセル</span>
-                        <span class="modal-btn">決定</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
+      <section id="how" class="section-block">
+        <div class="section-heading reveal">
+          <p class="eyebrow">How it works</p>
+          <h2>操作は3つだけ。</h2>
+        </div>
+        <div class="steps-grid">
+          <article class="step-card reveal">
+            <span>01</span>
+            <h3>ルートタスクを作る</h3>
+            <p>まずはプロジェクトや大きな作業を、1つのルートタスクとして置きます。</p>
+          </article>
+          <article class="step-card reveal">
+            <span>02</span>
+            <h3>線を引っ張る</h3>
+            <p>次にやることは、線を伸ばして子タスクとして追加。流れのまま分解できます。</p>
+          </article>
+          <article class="step-card reveal">
+            <span>03</span>
+            <h3>あとから簡単編集</h3>
+            <p>名前、日付、位置はあとから調整できます。予定変更にもすぐ対応できます。</p>
+          </article>
         </div>
       </section>
 
-      <section class="simple-points" id="beta">
-        <div class="container reveal">
-          <div class="simple-card">
-            <div>
-              <span class="section-kicker">Why Cherry</span>
-              <h2>見たまま使えて、流れが崩れない。</h2>
-            </div>
-            <div class="simple-list">
-              <div>
-                <strong>Simple</strong>
-                <p>必要な操作だけに絞り、覚えることを増やさない設計です。</p>
-              </div>
-              <div>
-                <strong>Visual</strong>
-                <p>親子関係や作業の流れを、リストではなくそのまま画面で把握できます。</p>
-              </div>
-              <div>
-                <strong>Beta</strong>
-                <p>現在はβ版です。正式版に向けて、これからさらに磨いていきます。</p>
-              </div>
-            </div>
-          </div>
+      <section id="features" class="section-block split-block">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Why Cherry</p>
+          <h2>リストでは見えない「つながり」を見る。</h2>
+        </div>
+        <div class="feature-list reveal">
+          <div><strong>Visual</strong><p>親子関係や分岐を、付箋と線で直感的に把握できます。</p></div>
+          <div><strong>Simple</strong><p>ボタンとドラッグ操作を中心に、覚えることを少なくしています。</p></div>
+          <div><strong>Flexible</strong><p>作ったあとも並び替えや編集がしやすく、流れを壊さず調整できます。</p></div>
         </div>
       </section>
 
-      <section class="cta-section">
-        <div class="container reveal">
-          <div class="cta-box">
-            <span class="pill beta-pill">Currently in beta</span>
-            <h2>Try Cherry and feel the flow.</h2>
-            <p>
-              まだ正式版ではありませんが、Cherryらしい「シンプルで直感的な操作」はすでに体験できます。
-            </p>
-            <div class="hero-actions centered">
-              <a class="button primary" href="https://fugu0141.github.io/Cherry-ToDo/">Open beta app</a>
-              <a class="button ghost" href="https://github.com/Fugu0141/Cherry-ToDo">View GitHub</a>
-            </div>
-          </div>
-        </div>
+      <section id="beta" class="beta-box reveal">
+        <p class="eyebrow">Current status</p>
+        <h2>Cherry is currently in beta.</h2>
+        <p>基本の考え方と操作感は試せますが、UI、モバイル体験、スケジュール機能はまだ改善中です。正式版に向けて、これからもっと磨いていきます。</p>
+        <div class="actions center"><a class="button primary" href="https://fugu0141.github.io/Cherry-ToDo/">Try Cherry beta</a></div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <span>Cherry · flow-based todo app</span>
-        <span>β version / open-source</span>
-      </div>
-    </footer>
-
+    <footer class="site-footer">Cherry · Flow based Todo app · β version</footer>
     <script src="./script.js"></script>
   </body>
 </html>
