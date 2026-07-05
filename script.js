@@ -7,6 +7,7 @@ const translations = {
     navHow: '使い方',
     navFeatures: '特徴',
     navBeta: 'β版',
+    navContribute: '貢献',
     tryBeta: 'Try beta',
     eyebrow: 'β版 · オープンソース',
     heroTitle: 'タスクを、<br />流れで組み立てる。',
@@ -49,6 +50,7 @@ const translations = {
     navHow: 'How it works',
     navFeatures: 'Features',
     navBeta: 'Beta',
+    navContribute: 'Contribute',
     tryBeta: 'Try beta',
     eyebrow: 'Beta version · open-source',
     heroTitle: 'Build tasks<br />as a flow.',
@@ -94,6 +96,16 @@ const updateHeader = () => {
   header.classList.toggle('is-scrolled', window.scrollY > 8);
 };
 
+const addContributeLink = () => {
+  const nav = document.querySelector('.nav-links');
+  if (!nav || nav.querySelector('[data-i18n="navContribute"]')) return;
+  const link = document.createElement('a');
+  link.href = './contribute.html';
+  link.dataset.i18n = 'navContribute';
+  link.textContent = '貢献';
+  nav.appendChild(link);
+};
+
 const applyLanguage = (language) => {
   const selected = translations[language] ? language : 'ja';
   document.documentElement.lang = selected;
@@ -116,6 +128,7 @@ const applyLanguage = (language) => {
   });
 };
 
+addContributeLink();
 updateHeader();
 window.addEventListener('scroll', updateHeader, { passive: true });
 
